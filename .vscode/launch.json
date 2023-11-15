@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Odoo",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/odoo-bin",
+      "args": [
+        "--config=${workspaceFolder}/odoo.conf",
+        // "--init=library_member",
+        "--update=demo",
+        "--dev=xml",
+      ],
+      "python": "${command:python.interpreterPath}",
+      "justMyCode": false,
+    }
+  ]
+}
