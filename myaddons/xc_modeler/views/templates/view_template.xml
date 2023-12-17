@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+<template id="xc_modeler.view_template">
+<odoo>
+    <data>
+    
+        <!-- tree -->
+        <record model="ir.ui.view" t-attf-id="{{formated_model_name}}_list">
+            <field name="name"><t t-out="model_info['name']"/> list </field>
+            <field name="model"><t t-out="model_info['name']"/></field>
+            <field name="arch" type="xml">
+                <tree>
+                    <t t-foreach="fields" t-as="field">
+                    <t t-if="field['xml']">
+                    <t t-raw="field['xml']"/>
+                    </t>
+                    </t>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- form  -->
+        <record model="ir.ui.view" t-attf-id="{{formated_model_name}}_form">
+            <field name="name"><t t-out="model_info['name']"/> form </field>
+            <field name="model"><t t-out="model_info['name']"/></field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+<t t-foreach="fields" t-as="field">
+                            <div class="form-group row">
+                                <label t-attf-for="{{field['name']}}" class="col-sm-2 col-form-label"><t t-out="field['name']"/></label>
+                                <div class="col-sm-10">
+                                    <t t-if="field['xml']">
+                                    <t t-raw="field['xml']"/>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- action  -->
+        <record model="ir.actions.act_window" t-attf-id="{{formated_model_name}}_act_window">
+            <field name="name"><t t-out="model_info['name']"/></field>
+            <field name="res_model"><t t-out="model_info['name']"/></field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem t-if="model_info['model_type'] == 'Model' and len(model_info['menu_items']) == 0 and model_info['has_menu']" 
+            t-attf-name="{{model_info['name']}}"
+            t-attf-id="{{formated_model_name}}_menu"
+            t-attf-parent="{{model_info['root_menu_res_id']}}"
+            t-attf-action="{{formated_model_name}}_act_window"/>
+              
+    </data>
+</odoo>
+</template>
+    </data>
+</odoo>

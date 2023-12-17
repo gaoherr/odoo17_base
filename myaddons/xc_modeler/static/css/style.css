@@ -1,0 +1,126 @@
+
+.table_header {
+    background:none;
+    line-height:30px; 
+    width:280px;
+    height:60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.table_header .title, .table_header span {
+    flex: 1 1 auto;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+}
+
+.table_header .row1 {
+    height: 30px;
+    width: 100%;
+}
+
+.table_header .row2 {
+    height: 30px;
+    border-top: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table_header .row2 a {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+
+.field_operations {
+    background:none;
+    line-height:30px; 
+    width:50px;
+    height:30px;
+    display: flex;
+    align-items: center;
+}
+
+.table_header .btn, .field_operations .btn {
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.table_header .btn:hover, .field_operations .btn:hover {
+    color: #0d6efd;
+}
+
+.table_header .btn .fa-trash-o, .field_operations .btn .fa-trash-o{
+    margin-top: -1px;
+}
+
+.xc_field_tip ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.xc_field_tip ul li {
+    display: flex;
+    list-style: none;
+}
+
+.xc_field_tip ul li:hover {
+    background: #686565;
+}
+
+.xc_field_tip > ul > li > .name_attr {
+    width: 50px;
+    text-align: right;
+}
+
+.xc_field_tip > ul > li > .value_attr {
+    flex: 1 1 auto;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+.xc_modeler_toolbar {
+    display: inline-block;
+}
+
+.xc_modeler_toolbar > ul {
+    padding: 5px;
+}
+
+.xc_modeler_toolbar > ul > li > a {
+    line-height: 24px;
+    height: 24px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:increment,
+::-webkit-scrollbar-thumb:decrement {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+

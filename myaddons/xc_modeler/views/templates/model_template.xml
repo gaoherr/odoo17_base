@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+<template id="xc_modeler.model_template">
+# -*- coding: utf-8 -*-
+
+from odoo import models, fields, api
+
+
+class <t t-out="model_info['model_class_name']"/>(models.<t t-out="model_info['model_type']"/>):
+    '''
+    <t t-out="model_info['name']"/>
+    '''
+    _name = '<t t-out="model_info['name']"/>'
+<t t-if="model_info.get('_inherit')"><t t-out="model_info.get('_inherit')"/></t>
+<t t-if="model_info.get('_inherits')"><t t-out="model_info.get('_inherits')"/></t>
+
+
+<t t-foreach="fields" t-as="field">
+<t t-raw="field['code']"/>
+</t>
+
+
+<t t-foreach="fields" t-as="field">
+<t t-if="field['compute'] ">
+<t t-raw="field['compute']"/>
+</t>
+</t>
+</template>
+    </data>
+</odoo>

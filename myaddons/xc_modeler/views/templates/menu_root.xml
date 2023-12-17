@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+<template id="xc_modeler.menu_root_template">
+<odoo>
+    <data>
+        <menuitem t-attf-name="{{project_name}}" t-attf-id="{{project_name}}.root_menu"/>
+    </data>
+</odoo>
+</template>
+    </data>
+</odoo>

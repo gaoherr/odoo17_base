@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <template id="xc_modeler.manifest_template_15">
+            # -*- coding: utf-8 -*-
+            {
+                'name': '<t t-raw="project_info['name']"/>',
+                'summary': '<t t-raw="project_info['summary']"/>',
+                'description': '<t t-raw="project_info['description']"/>',
+                'author': '<t t-raw="project_info['author']"/>',
+                'website': '<t t-raw="project_info['website']"/>',
+                'category': '<t t-raw="project_info['category']"/>',
+                'version': '<t t-raw="project_info['version']"/>',
+                <t t-if="project_info['license']">'license': '<t t-raw="project_info['license']"/>',</t>
+                <t t-if="project_info['website']">'website': '<t t-raw="project_info['website']"/>',</t>
+                <t t-if="project_info['live_test_url']">'live_test_url': '<t t-raw="project_info['live_test_url']"/>',</t>
+                <t t-if="project_info['price']">'price': <t t-raw="project_info['price']"/>,</t>
+                <t t-if="project_info['depends']">'depends': <t t-raw="project_info['depends']" />,</t>
+                'data': [
+                    'security/ir.model.access.csv',
+                    <t t-foreach="view_xmls" t-as="xml"><t t-raw="xml"/>,
+                    </t>
+                ],
+
+                'assets': {
+                    'web.assets_backend': [],
+                    'web.assets_qweb': [],
+                    'web.assets_backend_prod_only': []
+                },
+                'application': '<t t-raw="project_info['application']"/>',
+            }
+        </template>
+    </data>
+</odoo>

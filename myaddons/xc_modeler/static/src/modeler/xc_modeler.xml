@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+<t t-name="xc_modeler.modeler">
+    <div class="main_container d-flex flex-column" style="width:100%;height:100%" t-ref="root">
+        
+        <div class="xc_modeler_toolbar d-flex p-1">
+            
+            <button class="btn btn-link ms-1" type="button" t-on-click="add_new_model">
+                Add Model
+            </button>
+
+            <Dropdown togglerClass="'btn btn-link ms-1 me-1'" position="'bottom-end'">
+
+                <t t-set-slot="toggler">
+                    <span>Sync Infos</span>
+                </t>
+
+                <DropdownItem onSelected="() => this.sync_to_project()">
+                    Sync To Project
+                </DropdownItem>
+                
+                <DropdownItem onSelected="() => this.sync_to_files()">
+                    Sync To Files
+                </DropdownItem>
+
+                <DropdownItem onSelected="() => this.download_project()">
+                    Download project
+                </DropdownItem>
+
+                <DropdownItem onSelected="() => this.export_as_svg()">
+                    Export As Svg
+                </DropdownItem>
+
+            </Dropdown>
+
+            <button class="btn btn-link auto_layout ms-1" type="button" t-on-click="() => this.auot_layout()">
+                Auto Layout
+            </button>
+
+            <span class="fake_span" t-ref="fake_ref"></span>
+
+        </div>
+
+        <div class="modeler_container flex-fill">
+            <iframe t-ref="iframe" t-on-load="onIframeLoaded" class="h-100 w-100 d-block" t-att-src="host_url" />
+        </div>
+
+        <t t-call="xc_modeler.table_panel" />
+    </div>
+</t>
+
+<!-- table panel -->
+<t t-name="xc_modeler.table_panel">
+    <div class="table_panel d-none" t-ref="root">
+        <div class="toggler"></div>
+        <div clss="tables_container">
+            <div class="table_search">
+                <input class="table_search_input" t-model='state.search_value' type="text" placeholder="Search..." t-on-change="do_search" />
+            </div>
+            <ul class="table_list">
+                <li t-foreach="tables || []" t-as="table" t-key="table.id">
+                    <span><t t-esc="table.name" /></span>
+                    <span><t t-esc="fields_count"/></span>
+                    <button class="btn btn-info">view</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</t>
+
+</templates>

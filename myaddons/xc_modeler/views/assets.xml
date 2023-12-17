@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="xc_modeler_res"
+                  name="xc_modeler_res"
+                  inherit_id="web.assets_backend">
+
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css" 
+                        href="/xc_modeler/static/css/xc_modeler.scss" />
+                        
+                <script type="application/javascript"
+                        src="/xc_modeler/static/libs/FileSaver.min.js" />  
+                <script type="application/javascript"
+                        src="/xc_modeler/static/libs/jszip.min.js" /> 
+                <script type="application/javascript"
+                        src="/xc_modeler/static/js/XcModelerAction.js" />
+                <script type="application/javascript"
+                        src="/xc_modeler/static/js/XcChoseDirField.js" />
+                <script type="application/javascript" 
+                        src="/xc_modeler/static/js/XcProjectList.js" />
+                <script type="application/javascript"
+                        src="/xc_modeler/static/js/XcBaseProjectList.js" />
+                <script type="application/javascript"
+                        src="/xc_modeler/static/js/XcLocalApi.js" />
+            </xpath>
+
+        </template>
+
+    </data>
+</odoo>

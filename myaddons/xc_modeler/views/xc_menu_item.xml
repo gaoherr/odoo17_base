@@ -1,0 +1,99 @@
+
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="xc_modeler.menu_item_list">
+            <field name="name">menu_item list </field>
+            <field name="model">xc_modeler.menu_item</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="res_id"/>
+                    <field name="xml"/>
+                    <field name="parent"/>
+                    <field name="project"/>
+                    <field name="web_icon"/>
+                    <field name="icon_data"/>
+                    <field name="path"/>
+                    <field name="sequence"/>
+                    <field name="groups"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xc_modeler.menu_item_form">
+            <field name="name">menu_item form </field>
+            <field name="model">xc_modeler.menu_item</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="project" invisible="1" force_save="1" />
+                    <field name="id" invisible="1" />
+
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-2 col-form-label">name</label>
+                        <div class="col-sm-10">
+                            <field name="name"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="res_id" class="col-sm-2 col-form-label">res_id</label>
+                        <div class="col-sm-10">
+                            <field name="res_id"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="xml" class="col-sm-2 col-form-label">xml</label>
+                        <div class="col-sm-10">
+                            <field name="xml"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="parent" class="col-sm-2 col-form-label">parent</label>
+                        <div class="col-sm-10">
+                            <field name="parent"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="web_icon" class="col-sm-2 col-form-label">web_icon</label>
+                        <div class="col-sm-10">
+                            <field name="web_icon"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="icon_data" class="col-sm-2 col-form-label">icon_data</label>
+                        <div class="col-sm-10">
+                            <field name="icon_data"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="sequence" class="col-sm-2 col-form-label">sequence</label>
+                        <div class="col-sm-10">
+                            <field name="sequence"/>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="groups" class="col-sm-2 col-form-label">groups</label>
+                        <div class="col-sm-10">
+                            <field name="groups"/>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+ 
+        <record model="ir.actions.act_window" id="xc_modeler.menu_item_act_window">
+            <field name="name">Menu Item</field>
+            <field name="res_model">xc_modeler.menu_item</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">['|', ('project.owners', 'in', [uid]), '&amp;', ('project.create_uid', '=', uid), ('project.base_odoo_project', '=', False)]</field>
+        </record>
+
+    </data>
+</odoo>
+    

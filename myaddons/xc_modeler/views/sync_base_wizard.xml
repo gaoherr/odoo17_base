@@ -1,0 +1,35 @@
+
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="xc_modeler.sync_base_wizard_list">
+            <field name="name">xc_modeler.sync_base_wizard list </field>
+            <field name="model">xc_modeler.sync_base_wizard</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="odoo_dir" string="odoo_dir"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="xc_modeler.sync_base_wizard_form">
+            <field name="name">xc_modeler.sync_base_wizard form </field>
+            <field name="model">xc_modeler.sync_base_wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="form-group row">
+                        <label for="odoo_dir" class="col-sm-2 col-form-label">odoo_dir</label>
+                        <div class="col-sm-10">
+                            <field name="odoo_dir" string="odoo_dir"/>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="xc_modeler.sync_base_wizard_act_window">
+            <field name="name">xc_modeler.sync_base_wizard</field>
+            <field name="res_model">xc_modeler.sync_base_wizard</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

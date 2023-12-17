@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+<template id="xc_modeler.controller_template">
+# -*- coding: utf-8 -*-
+from odoo import http
+
+# class <t t-out="project_name" />Contorller(http.Controller):
+#     @http.route('/<t t-out="project_name" />/index/', auth='public')
+#     def index(self, **kw):
+#         return "Hello, world"
+
+#     @http.route('/<t t-out="project_name" />/list/objects/', auth='public')
+#     def list(self, **kw):
+#         return []
+</template>
+    </data>
+</odoo>

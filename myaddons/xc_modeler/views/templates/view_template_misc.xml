@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+
+<template id="xc_modeler.list_view_template">
+    <record model="ir.ui.view" t-attf-id="{{formated_model_name}}_list">
+        <field name="name"><t t-out="model_info['name']"/> list </field>
+        <field name="model"><t t-out="model_info['name']"/></field>
+        <field name="arch" type="xml">
+            <tree>
+                <t t-foreach="fields" t-as="field"><t t-out="field['xml']"/>
+                </t>
+            </tree>
+        </field>
+    </record>
+</template>
+
+<template id="xc_modeler.form_view_template">
+    <record model="ir.ui.view" t-attf-id="{{formated_model_name}}_form">
+        <field name="name"><t t-out="model_info['name']"/> form </field>
+        <field name="model"><t t-out="model_info['name']"/></field>
+        <field name="arch" type="xml">
+            <form>
+                <t t-foreach="fields" t-as="field"><div class="form-group row">
+                    <label t-attf-for="{{field['name']}}" class="col-sm-2 col-form-label"><t t-out="field['name']"/></label>
+                    <div class="col-sm-10">
+                        <t t-out="field['xml']"/>
+                    </div>
+                </div>
+                </t>
+            </form>
+        </field>
+    </record>
+</template>
+
+<template id="xc_modeler.window_action_template">
+    <record model="ir.actions.act_window" t-attf-id="{{formated_model_name}}_act_window">
+        <field name="name"><t t-out="model_info['name']"/></field>
+        <field name="res_model"><t t-out="model_info['name']"/></field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</template>
+
+<template id="xc_modeler.menu_template">
+    <menuitem t-attf-name="{{model_info['name']}}"
+            t-attf-id="{{formated_model_name}}_menu"
+            t-attf-parent="{{format_name(model_info['project_name'])}}.menu_root"
+            t-attf-action="{{formated_model_name}}_act_window"/>
+</template>
+
+    </data>
+</odoo>

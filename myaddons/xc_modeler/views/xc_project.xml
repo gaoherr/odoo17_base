@@ -1,0 +1,206 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="xc_modeler.project_list">
+            <field name="name">Project</field>
+            <field name="model">xc_modeler.project</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <header>
+                        <button name="import_project" type="object" string="Import Project" class="oe_highlight"/>
+                    </header>
+                    <field name="project_name"/>
+                    <field name="owners" widget="many2many_tags"/>
+                    <field name="version"/>
+                    <field name="depends"/>
+                    <field name="license"/>
+                    <field name="remark"/>
+                    <button class="btn btn-primary" type="object" name="edit_project" string="Edit" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xc_modeler.base_project_list_view">
+            <field name="name">Project</field>
+            <field name="model">xc_modeler.project</field>
+            <field name="inherit_id" ref="xc_modeler.project_list"/>
+            <field name="mode" eval="'primary'"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="delete">0</attribute>
+                    <attribute name="edit">0</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xc_modeler.modeler_form">
+            <field name="name">Project</field>
+            <field name="model">xc_modeler.project</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="id" />
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="project_dir">project_dir</label>
+                            <div class="col-sm-10">
+                                <field name="project_dir" widget="choose_project_dir"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="project_name">project_name</label>
+                            <div class="col-sm-10">
+                                <field name="project_name" readonly="1" force_save="1" />
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="name">name</label>
+                            <div class="col-sm-10">
+                                <field name="name" />
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="odoo_version">odoo_version</label>
+                            <div class="col-sm-10">
+                                <field name="odoo_version"/>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="depends">depends</label>
+                            <div class="col-sm-10">
+                                <field name="depends"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="version">version</label>
+                            <div class="col-sm-10">
+                                <field name="version"/>
+                            </div>
+                        </div>
+
+                        <notebook>
+                            <page string="Manifest(normal)">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" for="summary">summary</label>
+                                    <div class="col-sm-10">
+                                        <field name="summary"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" for="description">description</label>
+                                    <div class="col-sm-10">
+                                        <field name="description"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" for="author">author</label>
+                                    <div class="col-sm-10">
+                                        <field name="author"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" for="icon">icon</label>
+                                    <div class="col-sm-10">
+                                        <field name="icon"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" for="category">category</label>
+                                    <div class="col-sm-10">
+                                        <field name="category"/>
+                                    </div>
+                                </div>
+                            </page>
+
+                            <page string="Manifest(App Store)">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" for="website">website</label>
+                                    <div class="col-sm-10">
+                                        <field name="website"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" for="live_test_url">live_test_url</label>
+                                    <div class="col-sm-10">
+                                        <field name="live_test_url"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" for="price">price</label>
+                                    <div class="col-sm-10">
+                                        <field name="price"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" for="license">license</label>
+                                    <div class="col-sm-10">
+                                        <field name="license"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" for="images">images</label>
+                                    <div class="col-sm-10">
+                                        <field name="images"/>
+                                    </div>
+                                </div>
+                            </page>
+
+                            <page string="Models">
+                                <div class="form-group row">
+                                    <field name="project_models" context="{'form_view_ref': 'xc_modeler.model_form'}">
+                                        <tree eitable="top" context="{'form_view_ref': 'xc_modeler.model_form'}">
+                                            <field name="name"/>
+                                            <field name="domain"/>
+                                            <field name="remark"/>
+                                        </tree>
+                                    </field>
+                                </div>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="xc_modeler.project_act_window">
+            <field name="name">Project</field>
+            <field name="res_model">xc_modeler.project</field>
+            <field name="domain">[('base_odoo_project', '=', False)]</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">['|', ('owners', 'in', [uid]), ('create_uid', '=', uid), ('base_odoo_project', '=', False)]</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                  (0, 0, {'view_mode': 'tree', 'view_id': ref('xc_modeler.project_list')}),
+                  (0, 0, {'view_mode': 'form', 'view_id': ref('xc_modeler.modeler_form')})]"/>
+        </record>
+
+        <record model="ir.actions.act_window" id="xc_modeler.base_project_act_window">
+            <field name="name">Base Project</field>
+            <field name="res_model">xc_modeler.project</field>
+            <field name="domain">[('base_odoo_project', '=', True)]</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                  (0, 0, {'view_mode': 'tree', 'view_id': ref('xc_modeler.base_project_list_view')}),
+                  (0, 0, {'view_mode': 'form', 'view_id': ref('xc_modeler.modeler_form')})]"/>
+        </record>
+
+        <!-- client action  -->
+        <record id="xc_modeler.modeler_client_action" model="ir.actions.client">
+            <field name="name">Project Editor</field>
+            <field name="tag">modeler_client_action</field>
+            <field name="target">main</field>
+        </record>
+
+    </data>
+</odoo>

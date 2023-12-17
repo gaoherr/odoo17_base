@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <template id="xc_modeler.csv_template">
+            id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+            <t t-foreach="models" t-as="model">access_<t t-out="model['project_name']"/>_<t t-out="model['name']"/>,<t t-out="model['project_name']"/>.<t t-out="model['name']"/>,model_<t t-out="model['project_name']"/>_<t t-out="model['model_name']"/>,,1,1,1,1
+
+            </t>
+        </template>
+    </data>
+</odoo>

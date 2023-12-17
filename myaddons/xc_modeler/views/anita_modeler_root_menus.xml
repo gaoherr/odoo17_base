@@ -1,0 +1,47 @@
+
+<odoo>
+    <data>
+        
+        <record model="ir.ui.view" id="xc_modeler.root_menus_list">
+            <field name="name">xc_modeler.root_menus list </field>
+            <field name="model">xc_modeler.root_menus</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="name"/>
+                    <field name="res_id" string="res_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="xc_modeler.root_menus_form">
+            <field name="name">xc_modeler.root_menus form </field>
+            <field name="model">xc_modeler.root_menus</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2 col-form-label">name</label>
+                            <div class="col-sm-10">
+                                <field name="name" string="name"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="res_id" class="col-sm-2 col-form-label">res_id</label>
+                            <div class="col-sm-10">
+                                <field name="res_id" string="res_id"/>
+                            </div>
+                        </div>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="xc_modeler.root_menus_act_window">
+            <field name="name">xc_modeler.root_menus</field>
+            <field name="res_model">xc_modeler.root_menus</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+              
+    </data>
+</odoo>

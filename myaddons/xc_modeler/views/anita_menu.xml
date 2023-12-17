@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="xc_modeler.menu_root"
+                  web_icon="xc_modeler,static/description/icon.png"
+                  name="Modeler"/>
+
+            <menuitem id="xc_modeler.projects_menu"
+                      name="Projects"
+                      sequence="1"
+                      action="xc_modeler.project_act_window"
+                      parent="xc_modeler.menu_root"/>
+
+            <menuitem id="xc_modeler.datas_menu"
+                    name="Datas"
+                    sequence="2"
+                    parent="xc_modeler.menu_root"/>
+
+                <menuitem id="xc_modeler.base_projects_menu"
+                        name="Base Modules"
+                        sequence="1"
+                        action="xc_modeler.base_project_act_window"
+                        parent="xc_modeler.datas_menu"/>
+
+                <menuitem name="Models" 
+                        id="xc_modeler.model_menu" 
+                        sequence="2" 
+                        parent="xc_modeler.datas_menu" 
+                        action="xc_modeler.models_act_window"/>
+
+                <menuitem name="Fields" 
+                        id="xc_modeler.field_menu" 
+                        sequence="3" 
+                        parent="xc_modeler.datas_menu" 
+                        action="xc_modeler.fields_act_window"/>
+
+                <menuitem name="Views" 
+                        id="xc_modeler.view_menu" 
+                        sequence="4" 
+                        parent="xc_modeler.datas_menu" 
+                        action="xc_modeler.xc_model_view_act_window"/>
+
+                <menuitem name="Menu Items"
+                        id="xc_modeler.menu_item_menu"
+                        sequence="5"
+                        parent="xc_modeler.datas_menu"
+                        action="xc_modeler.menu_item_act_window"/>
+
+            <menuitem name="Configs"
+                    id="xc_modeler.config_menu"
+                    sequence="3"
+                    groups="base.group_system"
+                    parent="xc_modeler.menu_root"/>
+
+                <menuitem name="Selections"
+                        id="xc_modeler.selection"
+                        sequence="1"
+                        parent="xc_modeler.config_menu" 
+                        action="xc_modeler.selection_act_window"/>
+
+    </data>
+</odoo>

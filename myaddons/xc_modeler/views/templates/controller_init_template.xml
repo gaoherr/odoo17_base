@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+<template id="xc_modeler.controller_init_template">
+# -*- coding: utf-8 -*-
+
+from . import controllers
+</template>
+
+    </data>
+</odoo>

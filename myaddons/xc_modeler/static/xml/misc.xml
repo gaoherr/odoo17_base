@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="xc_modeler.chose_dir">
+        <div>
+            <div class="d-flex">
+                <input type="text" class="form-control flex-fill" id="chose_dir" placeholder="Chose Directory" t-att-value="chose_dir"/>
+                <button class="btn btn-primary chose_dir ml-1 mr-2" t-att-action="chose_dir_button">
+                    <i class="fa fa-folder-open"/>
+                </button>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="xc_modeler.project_list_buttons">
+        <div class="dropdown xc_modeler_toolbar" style="display: inline-block">
+            <button class="btn btn-secondary import_from_dir">
+                Import Project
+            </button>
+        </div>
+    </t>
+
+    <t t-name="xc_modeler.base_project_list_buttons">
+        <div class="dropdown xc_modeler_toolbar" style="display: inline-block">
+            <button class="btn btn-secondary init_base_modules">
+                Init Base Project
+            </button>
+        </div>
+    </t>
+
+    <t t-name="xc_modeler.project_tree_buttons">
+        <div>
+            <button class="btn btn-primary" type="object" name="edit_project">
+                Model
+            </button>
+            <button class="btn btn-secondary" type="object" name="view_project">
+                View
+            </button>
+        </div>
+    </t>
+
+</templates>

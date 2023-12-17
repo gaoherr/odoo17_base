@@ -1,0 +1,40 @@
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=5,IE=9" ><![endif]-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Xc Modeler</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" type="text/css" href="./css/graph_editor.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+
+	<script type="text/javascript">
+		var urlParams = (function (url) {
+			var result = new Object();
+			var idx = url.lastIndexOf('?');
+			if (idx > 0) {
+				var params = url.substring(idx + 1).split('&');
+				for (var i = 0; i < params.length; i++) {
+					idx = params[i].indexOf('=');
+					if (idx > 0) {
+						result[params[i].substring(0, idx)] = params[i].substring(idx + 1);
+					}
+				}
+			}
+			return result;
+		})(window.location.href);
+		mxLoadResources = false;
+	</script>
+	<script type="text/javascript" src="js/app-vender.js?t=1702184291"></script>
+</head>
+
+<body class="geEditor">
+	<script type="text/javascript">
+		XcModelerInitPro()
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_xc_modeler_project,xc_modeler.project,model_xc_modeler_project,,1,1,1,1
+access_xc_modeler_model,xc_modeler.model,model_xc_modeler_model,,1,1,1,1
+access_xc_modeler_field,xc_modeler.field,model_xc_modeler_field,,1,1,1,1
+access_xc_modeler_selection,xc_modeler.selection,model_xc_modeler_selection,,1,1,1,1
+access_xc_modeler_view,xc_modeler.view,model_xc_modeler_view,,1,1,1,1
+access_xc_modeler_view_history,xc_modeler.view_history,model_xc_modeler_view_history,,1,1,1,1
+access_xc_modeler_data_dict,xc_modeler.data_dict,model_xc_modeler_data_dict,,1,1,1,1
+access_xc_modeler_menu_item,xc_modeler.menu_item,model_xc_modeler_menu_item,,1,1,1,1
+access_xc_modeler_sync_base_wizard,xc_modeler.sync_base_wizard,model_xc_modeler_sync_base_wizard,,1,1,1,1
+access_xc_modeler_sync_files_wizard,xc_modeler.sync_files_wizard,model_xc_modeler_sync_files_wizard,,1,1,1,1
+access_xc_modeler_sync_table_wizard,xc_modeler.sync_table_wizard,model_xc_modeler_sync_table_wizard,,1,1,1,1
+access_xc_modeler_root_menus,xc_modeler.root_menus,model_xc_modeler_root_menus,,1,1,1,1

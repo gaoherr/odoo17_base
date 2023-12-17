@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+<template id="xc_modeler.model_init_template">
+# -*- coding: utf-8 -*-
+
+<t t-foreach="model_names" t-as="model_name">
+from . import <t t-out="model_name"/>
+</t>
+</template>
+    </data>
+</odoo>

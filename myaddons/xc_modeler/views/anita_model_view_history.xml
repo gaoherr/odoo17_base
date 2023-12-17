@@ -1,0 +1,38 @@
+
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="xc_modeler.view_history_list">
+            <field name="name">_view history list </field>
+            <field name="model">xc_modeler.view_history</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xc_modeler.view_history_form">
+            <field name="name">view history form </field>
+            <field name="model">xc_modeler.view_history</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="form-group row">
+                        <label for="time" class="col-sm-2 col-form-label">time</label>
+                        <div class="col-sm-10">
+                            <field name="time"/>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="xc_modeler.view_history_act_window">
+            <field name="name">view history</field>
+            <field name="res_model">xc_modeler.view_history</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>
+    

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="False">
+
+        <record id="xc_modeler_field_type_char" model="xc_modeler.data_dict">
+            <field name="name">Char</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_integer" model="xc_modeler.data_dict">
+            <field name="name">Integer</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_float" model="xc_modeler.data_dict">
+            <field name="name">Float</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_boolean" model="xc_modeler.data_dict">
+            <field name="name">Boolean</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_selection" model="xc_modeler.data_dict">
+            <field name="name">Selection</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_text" model="xc_modeler.data_dict">
+            <field name="name">Text</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_html" model="xc_modeler.data_dict">
+            <field name="name">Html</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_date" model="xc_modeler.data_dict">
+            <field name="name">Date</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_datetime" model="xc_modeler.data_dict">
+            <field name="name">Datetime</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_binary" model="xc_modeler.data_dict">
+            <field name="name">Binary</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_many2one" model="xc_modeler.data_dict">
+            <field name="name">Many2one</field>
+            <field name="type">field_type</field>
+        </record>
+
+         <record id="xc_modeler_field_type_image" model="xc_modeler.data_dict">
+            <field name="name">Image</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_many2many" model="xc_modeler.data_dict">
+            <field name="name">Many2many</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_one2many" model="xc_modeler.data_dict">
+            <field name="name">One2many</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_reference" model="xc_modeler.data_dict">
+            <field name="name">Reference</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_binary_image" model="xc_modeler.data_dict">
+            <field name="name">Image</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_many2one" model="xc_modeler.data_dict">
+            <field name="name">Many2one</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_many2many" model="xc_modeler.data_dict">
+            <field name="name">Many2many</field>
+            <field name="type">field_type</field>
+        </record>
+
+        <record id="xc_modeler_field_type_one2many" model="xc_modeler.data_dict">
+            <field name="name">One2many</field>
+            <field name="type">field_type</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <template id="xc_modeler.manifest_template">
+# -*- coding: utf-8 -*-
+{
+    'name': '<t t-out="project_info['name']"/>',
+    'summary': """<t t-out="project_info['summary']"/>""",
+    'description': """<t t-out="project_info.get('description')"/>""",
+    'author': '<t t-out="project_info['author']"/>',
+    'website': '<t t-out="project_info['website']"/>',
+    'category': '<t t-out="project_info['category']"/>',
+    'version': '<t t-out="project_info['version']"/>',
+    <t t-if="project_info['license']">'license': '<t t-out="project_info['license']"/>',</t>
+    <t t-if="project_info['website']">'website': '<t t-out="project_info['website']"/>',</t>
+    <t t-if="project_info['live_test_url']">'live_test_url': '<t t-out="project_info['live_test_url']"/>',</t>
+    <t t-if="project_info['price']">'price': <t t-out="project_info['price']"/>,</t>
+    <t t-if="project_info['depends']">'depends': <t t-out="project_info['depends']" />,</t>
+    'data': [
+        'security/ir.model.access.csv',
+        <t t-foreach="view_xmls" t-as="xml">'<t t-out="xml"/>',
+        </t>
+    ],
+
+    'assets': {
+        'web.assets_backend': [],
+        'web.assets_qweb': [],
+        'web.assets_backend_prod_only': []
+    }
+    'application': '<t t-out="True if project_info.get('application') else False"/>',
+}
+        </template>
+    </data>
+</odoo>

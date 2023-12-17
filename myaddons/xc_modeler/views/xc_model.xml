@@ -1,0 +1,149 @@
+<odoo>
+    <data>
+
+        <!-- list -->
+        <record model="ir.ui.view" id="xc_modeler.tables_list">
+            <field name="name">Models</field>
+            <field name="model">xc_modeler.model</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="fields_count"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- form -->
+        <record model="ir.ui.view" id="xc_modeler.model_pop_form">
+            <field name="name">Model</field>
+            <field name="model">xc_modeler.model</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="project" invisible="1" />
+                    <field name="id" invisible="1" />
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="name">name</label>
+                        <div class="col-sm-4">
+                            <field name="name"/>
+                        </div>
+                        <div class="col-sm-6">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="model_type">model_type</label>
+                        <div class="col-sm-4">
+                            <field name="model_type"/>
+                        </div>
+                        <div class="col-sm-6">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="has_menu">has_menu</label>
+                        <div class="col-sm-4">
+                            <field name="has_menu"/>
+                        </div>
+                        <div class="col-sm-6">
+                        </div>
+                    </div>
+
+                    <notebook>
+                        <page string="Fields">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <field name="model_fields" options="{'no_open': True, 'no_create_edit': True}">
+                                        <tree limit="10">
+                                            <field name="name" string="Name"/>
+                                            <field name="field_type" string="Field Type"/>
+                                            <field name="string" string="String"/>
+                                            <field name="default" string="default" invisible="1"/>
+                                        </tree>
+                                    </field>
+                                </div>
+                            </div>
+                        </page>
+
+                        <page string="Views">
+                            <field name="views">
+                                <tree>
+                                    <field name="res_id" />
+                                    <field name="type" />
+                                </tree>
+                            </field>
+                        </page>
+                        <!--menu_items-->
+                        <page string="Menu Items">
+                            <field name="menu_items">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="sequence" />
+                                    <field name="groups" />
+                                    <field name="web_icon" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <!-- form -->
+        <record model="ir.ui.view" id="xc_modeler.model_form">
+            <field name="name">Model</field>
+            <field name="model">xc_modeler.model</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="project" invisible="1" />
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="name">name</label>
+                        <div class="col-sm-10">
+                            <field name="name"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="model_type">model_type</label>
+                        <div class="col-sm-4">
+                            <field name="model_type"/>
+                        </div>
+                        <div class="col-sm-6">
+                        </div>
+                    </div>
+
+                    <notebook>
+                        <page string="Fields">
+                            <field name="model_fields" options="{'no_open': True, 'no_create_edit': True}">
+                                <tree editable="top">
+                                    <field name="name" />
+                                    <field name="field_type" />
+                                    <field name="remark" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="views">
+                            <field name="views">
+                                <tree editable="top">
+                                    <field name="res_id" />
+                                    <field name="type" />
+                                    <field name="xml" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <!-- action --> 
+        <record model="ir.actions.act_window" id="xc_modeler.models_act_window">
+            <field name="name">Model</field>
+            <field name="res_model">xc_modeler.model</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">['|', ('project.owners', 'in', [uid]), '&amp;', ('project.create_uid', '=', uid), ('project.base_odoo_project', '=', False)]]</field>
+        </record>
+
+    </data>
+</odoo>
